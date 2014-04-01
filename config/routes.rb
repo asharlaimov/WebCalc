@@ -1,5 +1,6 @@
 WebCalc::Application.routes.draw do
   get "calc/index"
+  post "calc/calculate"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
