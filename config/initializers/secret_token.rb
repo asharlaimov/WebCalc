@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-WebCalc::Application.config.secret_key_base = 'aaeacb51a6686f1318a70e5691cb392df3f661e895fb2e9bea86a2657b4bc54718e4cad4150f8c0b86543f1db54aebf8451c38a60ea4350a87b647c343e2b3b2'
+WebCalc::Application.config.secret_key_base = 'a852226f9013ebb19e9f99012bb65ee540fadca48812e8915c25235e04e55dc4718924bb12f8e314bb44ae1db580db530169bd8f9186a37df82c71145a15c2ac'
