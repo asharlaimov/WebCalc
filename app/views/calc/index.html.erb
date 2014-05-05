@@ -1,6 +1,31 @@
 <h1>Calculator</h1>
-
+<% post_onkeyup = "this.form.sub.click()" %>
+<% post_onchange = "this.form.sub.click()" %>
 <%= form_tag calc_calculate_path, :method => :post, :remote => true do %>
-    <%= text_field_tag :expression, nil, :onkeyup => "this.form.sub.click()" %> = <span id="sum"></span>
+    <%= text_field_tag :expr1, nil, :onkeyup => post_onkeyup %>
+    <br>
+    <%= radio_button_tag(:action_operator, "+", true, :onchange => post_onchange) %>
+    <%= label_tag("+") %>
+    <br>
+    <%= radio_button_tag(:action_operator, "-", false, :onchange => post_onchange) %>
+    <%= label_tag("-") %>
+    <br>
+    <%= radio_button_tag(:action_operator, "/", false, :onchange => post_onchange) %>
+    <%= label_tag("/") %>
+    <br>
+    <%= radio_button_tag(:action_operator, "√", false, :onchange => post_onchange) %>
+    <%= label_tag("√") %>
+    <br>
+    <%= radio_button_tag(:action_operator, "∛", false, :onchange => post_onchange) %>
+    <%= label_tag("∛") %>
+    <br>
+    <%= radio_button_tag(:action_operator, "sin", false, :onchange => post_onchange) %>
+    <%= label_tag("sin") %>
+    <br>
+    <%= radio_button_tag(:action_operator, "cos", false, :onchange => post_onchange) %>
+    <%= label_tag("cos") %>
+    <br>
+    <%= text_field_tag :expr2, nil, :onkeyup => post_onkeyup %>
+    = <span id="result"></span>
     <%= submit_tag "ok", :name => "sub" %>
 <% end %>
