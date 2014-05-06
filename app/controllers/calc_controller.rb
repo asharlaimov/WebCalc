@@ -3,8 +3,8 @@ class CalcController < ApplicationController
   end
 
   def calculate
-    value1 = params[:expr1].to_s.to_f
-    value2 = params[:expr2].to_s.to_f
+    value1 = params[:expr1].to_f
+    value2 = params[:expr2].to_f
 
     case params[:action_operator]
       when '+'
@@ -22,7 +22,7 @@ class CalcController < ApplicationController
       when 'cos'
         @result = Math.cos(value1)
       else
-        @result = eval(params[:expr1])
+        @result = 0
     end
   end
 end
