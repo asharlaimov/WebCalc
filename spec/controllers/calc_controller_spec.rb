@@ -31,6 +31,11 @@ describe CalcController, :type => :controller do
       assigns(:result).should == 0
     end
 
+    it "error 1 / 0" do
+      post :calculate, :expr1 => '1', :expr2 => '0', :action_operator => '/', :remote => true, :format => 'js'
+      assigns(:result).should == Float::INFINITY
+    end
+
     it "returns 1 + 2" do
       post :calculate, :expr1 => '1', :expr2 => '2', :action_operator => '+', :remote => true, :format => 'js'
       assigns(:result).should == 3
