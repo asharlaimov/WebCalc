@@ -3,23 +3,26 @@ class CalcController < ApplicationController
   end
 
   def calculate
+    value1 = params[:expr1].to_s.to_f
+    value2 = params[:expr2].to_s.to_f
+
     case params[:action_operator]
       when '+'
-        @sum = params[:expr1].to_s.to_f + params[:expr2].to_s.to_f
+        @result = value1 + value2
       when '-'
-        @sum = params[:expr1].to_s.to_f - params[:expr2].to_s.to_f
+        @result = value1 - value2
       when '/'
-        @sum = params[:expr1].to_s.to_f / params[:expr2].to_s.to_f
+        @result = value1 / value2
       when '√'
-        @sum = Math.sqrt(params[:expr1].to_s.to_f)
+        @result = Math.sqrt(value1)
       when '∛'
-        @sum = Math.cbrt(params[:expr1].to_s.to_f)
+        @result = Math.cbrt(value1)
       when 'sin'
-        @sum = Math.sin(params[:expr1].to_s.to_f)
+        @result = Math.sin(value1)
       when 'cos'
-        @sum = Math.cos(params[:expr1].to_s.to_f)
+        @result = Math.cos(value1)
       else
-        @sum = eval(params[:expr1])
+        @result = eval(params[:expr1])
     end
   end
 end
