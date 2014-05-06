@@ -1,5 +1,9 @@
 require 'spec_helper'
 
 describe "calc/calculate.html.erb" do
-  pending "add some examples to (or delete) #{__FILE__}"
+  # it "display controls" do
+  #   render
+  #
+  #   expect(rendered).to include("100")
+  # end
 end

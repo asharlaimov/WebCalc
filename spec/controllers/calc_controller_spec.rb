@@ -16,6 +16,21 @@ describe CalcController, :type => :controller do
       expect(response).to render_template("calculate")
     end
 
+    it "1 + blank" do
+      post :calculate, :expr1 => '1', :action_operator => '+', :remote => true, :format => 'js'
+      assigns(:result).should == 1
+    end
+
+    it "blank + blank" do
+      post :calculate, :action_operator => '+', :remote => true, :format => 'js'
+      assigns(:result).should == 0
+    end
+
+    it "unknown operation" do
+      post :calculate, :expr1 => '1', :action_operator => 'unknown123', :remote => true, :format => 'js'
+      assigns(:result).should == 0
+    end
+
     it "returns 1 + 2" do
       post :calculate, :expr1 => '1', :expr2 => '2', :action_operator => '+', :remote => true, :format => 'js'
       assigns(:result).should == 3
